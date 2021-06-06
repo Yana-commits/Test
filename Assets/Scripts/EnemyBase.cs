@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Base : MonoBehaviour
+public class EnemyBase : MonoBehaviour
 {
-    public delegate void DamageBaseDelegate();
-    public static event DamageBaseDelegate score;
+    public delegate void DamageEnemyBaseDelegate();
+    public static event DamageEnemyBaseDelegate enemyScore;
     private void OnTriggerEnter(Collider other)
     {
 
