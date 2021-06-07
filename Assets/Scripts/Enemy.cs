@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Transform target;
 
     private NavMeshAgent agent;
+
     
     void Start()
     {
@@ -22,6 +23,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
+        //agent.SetDestination(target.position);
     }
 }
