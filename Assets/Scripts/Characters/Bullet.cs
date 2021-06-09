@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damager : MonoBehaviour
+public class Bullet : MonoBehaviour,IDamager
 {
-    [SerializeField]
+    
     private float damage;
 
     private GameObject owner;

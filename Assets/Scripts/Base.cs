@@ -10,7 +10,7 @@ public class Base : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.TryGetComponent<Damager>(out var damager))
+        if (other.TryGetComponent<Bullet>(out var damager))
         {
 
         }
