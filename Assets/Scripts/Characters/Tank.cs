@@ -36,7 +36,7 @@ public class Tank : Machine
                 return;
             }
         //}
-
+        Debug.Log("mmm");
         seeTarget = false;
     }
 
