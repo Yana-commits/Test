@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class Hunter : Tank
+public class Destroyer : Tank
 {
-    public string nameOfTarget = "Finish";
+    private string nameOfTarget = "Base";
     void Start()
     {
         DoOnStart(nameOfTarget);
-
     }
-
 }

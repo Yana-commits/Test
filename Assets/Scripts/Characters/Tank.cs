@@ -6,47 +6,63 @@ using UnityEngine.AI;
 public class Tank : Machine
 {
     public Rigidbody2D rigidbody;
-    protected bool seeTarget;
-    private float directionOffset = 0.6f;
+    private Transform target;
+    public Transform aim;
+    public NavMeshAgent agent;
+    public float shootingTime;
+     private float shootTime;
+    private Vector3 targetDirection;
 
-    protected void CheckTargetVisibility(GameObject aim)
+    protected bool CheckTargetVisibility(Transform aim)
     {
-        Vector2 targetDirection = aim.transform.position - gun.transform.position;
+        bool seeTarget;
 
-        //targetDirection.Normalize();
-        
-
-        float directionOffsetX = directionOffset * (transform.position.x > 0 ? 1 : -1);
-        float directionOffsetY = directionOffset * (transform.position.y > 0 ? 1 : -1);
-
-        Vector2 point = new Vector2(directionOffsetX, directionOffsetY);
-
-        RaycastHit2D hit = Physics2D.Raycast(point, targetDirection);
+         targetDirection = aim.transform.position - gun.transform.position;
 
         //Ray ray = new Ray(gun.transform.position, targetDirection);
 
-        //RaycastHit2D hit;
+        //RaycastHit hit;
 
-        //if (Physics2D.Raycast(ray, out hit))
+        //if (Physics.Raycast(ray, out hit))
         //{
-            if (hit.transform == aim.gameObject.transform)
-            {
-                Debug.Log($"{hit.collider.name}");
-                seeTarget = true;
-                return;
-            }
+        //    Debug.Log($"{hit.collider.name}");
+        //    if (hit.transform == aim)
+        //    {
+        //        Debug.Log("111");
+        //        seeTarget = true;
+        //        return;
+        //    }
+
         //}
-        Debug.Log("mmm");
-        seeTarget = false;
+
+        //seeTarget = false;
+       seeTarget = targetDirection.magnitude <= 5 ? true :  false;
+
+        return seeTarget;
     }
 
-    protected IEnumerator Shooting(int shootTime)
+    protected void DoOnStart(string nameOfTarget)
     {
-        while (seeTarget == true)
-        {
-            Shoot();
+        target = GameObject.FindGameObjectWithTag(nameOfTarget).transform;
 
-            yield return new WaitForSeconds(shootTime);
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
+
+    void Update()
+    {
+        agent.SetDestination(target.position);
+
+        shootTime = shootingTime - 1 * Time.fixedDeltaTime;
+
+        if (CheckTargetVisibility(aim))
+        {
+            if (shootTime < 0)
+            { 
+            
+            }
+            
+
         }
     }
 }

@@ -89,44 +89,5 @@ public class GameController : MonoBehaviour
 
     }
 
-    private void WallInstaller()
-    {
-        //var emptySquares = (fieldSize * fieldSize) * 0.05f;
-
-        //float offset = ((float)fieldSize) / 2f;
-
-        //Vector3 startPosition = new Vector3(transform.position.x - offset, transform.position.y - offset, transform.position.z - 2);
-
-        //for (int i = 0; i < fieldSize; i++)
-        //{
-        //    for (int j = 0; j < fieldSize; j++)
-        //    {
-
-        //        if ((i * fieldSize) + j >= (fieldSize * fieldSize) - emptySquares)
-        //        {
-
-        //            emptySquares--;
-        //        }
-
-        //        else
-        //        {
-
-        //            if (emptySquares == 0 ||
-        //               Random.Range(0, fieldSize * fieldSize / emptySquares) > 0)
-        //            {
-
-        //                GameObject newWall = Instantiate(wallPrefab,
-        //               new Vector3(startPosition.x + i, startPosition.y + j, startPosition.z), Quaternion.identity) as GameObject;
-        //            }
-
-        //            else
-        //            {
-
-        //                emptySquares--;
-        //            }
-        //        }
-        //    }
-        //}
-
-    }
+    
 }

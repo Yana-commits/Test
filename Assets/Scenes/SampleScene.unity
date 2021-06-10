@@ -377,7 +377,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: fa1c3382156b2a2479491a2f0c80d715, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 2109963949}
-  rigidbody: {fileID: 0}
-  aim: {fileID: 1878144558}
+  rigidbody: {fileID: 1771891100}
+  aim: {fileID: 1878144557}
   agent: {fileID: 1771891097}
   shootingTime: 3
 --- !u!4 &1771891099
@@ -685,6 +685,7 @@ GameObject:
   - component: {fileID: 1878144559}
   - component: {fileID: 1878144560}
   - component: {fileID: 1878144561}
+  - component: {fileID: 1878144562}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -805,6 +806,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1878144562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878144557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904be8be9d74e624c9f2ddda31c29ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 1878144561}
+  speed: 0
 --- !u!1 &2105009708
 GameObject:
   m_ObjectHideFlags: 0

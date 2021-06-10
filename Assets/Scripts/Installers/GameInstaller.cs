@@ -3,14 +3,14 @@ using Zenject;
 
 public class GameInstaller : MonoInstaller
 {
-
     [SerializeField]
     private GameObject navMesh;
 
     public override void InstallBindings()
     {
-        Container.Bind<GameController>().FromComponentInHierarchy().AsSingle().NonLazy();
-
         Container.BindInstance(navMesh);
+
+        Container.Bind<BulletPool>().FromComponentInHierarchy().AsSingle().NonLazy();
     }
+
 }
