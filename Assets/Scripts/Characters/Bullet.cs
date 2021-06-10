@@ -37,9 +37,9 @@ public class Bullet : MonoBehaviour,IDamager
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!GameObject.Equals(collision.gameObject, Owner))
+        if (!Equals(collision.gameObject, Owner))
         {
             Destructable target = collision.gameObject.GetComponent<Destructable>();
 

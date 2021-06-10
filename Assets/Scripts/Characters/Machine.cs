@@ -10,21 +10,21 @@ public class Machine : MonoBehaviour
 
     public Transform gun;
 
-    protected void Shoot(Vector2 direction, float shootPower)
+    protected void Shoot(Vector2 direction, float shootPower, GameObject owner)
     {
         GameObject newBullet = pool.snowBallParent.GetChild(pool.currentId).gameObject;
 
         newBullet.SetActive(true);
         newBullet.transform.position = gun.position;
 
-       
+
         newBullet.GetComponent<Rigidbody2D>().AddForce(direction.normalized * shootPower, ForceMode2D.Impulse);
 
 
         Bullet ballBehaviour = newBullet.GetComponent<Bullet>();
 
-        ballBehaviour.Owner = gameObject;
-
+        ballBehaviour.Owner = owner;
+        Debug.Log($"{ballBehaviour.Owner.gameObject.name}");
         pool.BUlletCounter();
 
     }

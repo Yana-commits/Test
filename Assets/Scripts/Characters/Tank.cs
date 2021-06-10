@@ -59,7 +59,7 @@ public class Tank : Machine
         {
             if (shootTime >= shootingTime)
             {
-                Shoot(targetDirection, 5);
+                Shoot(targetDirection, 5, this.gameObject);
               
                 shootTime =0;
             }
