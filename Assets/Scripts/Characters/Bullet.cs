@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour,IDamager
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (!GameObject.Equals(collision.gameObject, Owner))
         {
@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour,IDamager
             {
                 
             }
-
+            Debug.Log("222");
             gameObject.SetActive(false);
         }
 

@@ -10,7 +10,7 @@ public class Tank : Machine
     public Transform aim;
     public NavMeshAgent agent;
     public float shootingTime;
-     private float shootTime;
+     private float shootTime =0;
     private Vector3 targetDirection;
 
     protected bool CheckTargetVisibility(Transform aim)
@@ -53,16 +53,16 @@ public class Tank : Machine
     {
         agent.SetDestination(target.position);
 
-        shootTime = shootingTime - 1 * Time.fixedDeltaTime;
+        shootTime = shootTime + 1 * Time.fixedDeltaTime;
 
         if (CheckTargetVisibility(aim))
         {
-            if (shootTime < 0)
-            { 
-            
+            if (shootTime >= shootingTime)
+            {
+                Shoot(targetDirection, 5);
+              
+                shootTime =0;
             }
-            
-
         }
     }
 }

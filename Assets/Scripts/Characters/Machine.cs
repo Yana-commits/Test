@@ -5,7 +5,7 @@ using Zenject;
 
 public class Machine : MonoBehaviour
 {
-    [SerializeField]
+    [Inject]
     private BulletPool pool;
 
     public Transform gun;
@@ -27,7 +27,5 @@ public class Machine : MonoBehaviour
 
         pool.BUlletCounter();
 
-        Debug.Log("Bang");
-       
     }
 }

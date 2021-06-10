@@ -579,6 +579,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaces: {fileID: 1205961874}
+--- !u!1 &1436928195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436928197}
+  - component: {fileID: 1436928196}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1436928196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436928195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe598a22b76d6e43900365ee55ee77f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowBallParent: {fileID: 1436928197}
+  poolCount: 10
+  currentId: 0
+--- !u!4 &1436928197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436928195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.1259737, y: -4.448017, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771891096
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +637,7 @@ GameObject:
   - component: {fileID: 1771891098}
   - component: {fileID: 1771891097}
   - component: {fileID: 1771891100}
+  - component: {fileID: 1771891101}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -634,9 +681,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 2109963949}
   rigidbody: {fileID: 1771891100}
-  aim: {fileID: 1878144557}
+  aim: {fileID: 1878144558}
   agent: {fileID: 1771891097}
   shootingTime: 3
+  nameOfTarget: Player
 --- !u!4 &1771891099
 Transform:
   m_ObjectHideFlags: 0
@@ -673,6 +721,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1771891101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771891096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c0176528d46b34b9b17bf084395816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1878144557
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +746,7 @@ GameObject:
   - component: {fileID: 1878144560}
   - component: {fileID: 1878144561}
   - component: {fileID: 1878144562}
+  - component: {fileID: 1878144563}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -820,6 +881,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1878144561}
   speed: 0
+--- !u!114 &1878144563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878144557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c0176528d46b34b9b17bf084395816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2105009708
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 90550041189f67f48a290e080208cb7d, type: 2}
   _monoInstallers:
   - {fileID: 2105009710}
   - {fileID: 2105009709}
